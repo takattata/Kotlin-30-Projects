@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:scrollbars="vertical">
+
+    <ImageView
+        android:id="@+id/headerImage"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="header image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image_header_contact"/>
+
+    <TextView
+        android:id="@+id/aboutusHeaderText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerImage"
+        android:padding="16dp"
+        android:text="About Us"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/aboutusText"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutusHeaderText"
+        android:layout_centerHorizontal="true"
+        android:text="asoifjeajgkaasdfasdfasdfasdfasdffasdfdgasegasdgasdagasdgasdgljaerkgljadklfngvjkadnfgjaejkfljeklgjvkaldnrvjkladkrjfklaejgbklrneajkbkaldjgklvjaerbkaeknrgbjkaerjfkadkogjvjrekanmbklad
+
+        jrgikjaeoirbjoegakdjfblkadasdfasdfasfasdfasdfasdfjklasdfasdfasdfasdfasdfasdfasdfasdfasdfvbjeralk;gjioerajmnadklbakoejbreajbkljadfklnjdkabnka;lrjbil;kejarbklnaekjrbnajkfdljbakljdklgvjeakbnjkr"
+        android:textColor="@android:color/black"
+        />
+
+    <TextView
+        android:id="@+id/aboutusFooterText"
+        android:layout_width="208dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/aboutusText"
+        android:layout_below="@id/aboutusText"
+        android:layout_gravity="center"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        android:text="*Hands-free phones available"
+        android:textColor="@android:color/black"
+        android:textStyle="italic"/>
+
+    <TextView
+        android:id="@+id/contactHeaderText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutusFooterText"
+        android:padding="16dp"
+        android:text="Contact"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/mailIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@id/aboutusText"
+        android:layout_below="@id/contactHeaderText"
+        android:contentDescription="email"
+        android:src="@drawable/ic_mail_black_24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/mailIcon"
+        android:layout_toEndOf="@id/mailIcon"
+        android:paddingStart="16dp"
+        android:text="good-as-old@example.com"
+        android:textColor="@android:color/black"/>
+
+    <ImageView
+        android:id="@+id/phoneIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@id/aboutusText"
+        android:layout_below="@id/mailIcon"
+        android:layout_marginTop="16dp"
+        android:contentDescription="phone number"
+        android:src="@drawable/ic_phone_black_24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/phoneIcon"
+        android:layout_toEndOf="@id/phoneIcon"
+        android:paddingStart="16dp"
+        android:text="412-888-9028"
+        android:textColor="@android:color/black"/>
+
+    <ImageView
+        android:id="@+id/webIcon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@id/aboutusText"
+        android:layout_below="@id/phoneIcon"
+        android:layout_marginTop="16dp"
+        android:contentDescription="web address"
+        android:src="@drawable/ic_web_black_24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/webIcon"
+        android:layout_toEndOf="@id/webIcon"
+        android:paddingStart="16dp"
+        android:text="www.example.com"
+        android:textColor="@android:color/black"/>
+
+</RelativeLayout>
