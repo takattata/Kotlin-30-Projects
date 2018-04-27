@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:paddingTop="16dp"
         android:paddingBottom="16dp"
-        android:textSize="18sp"
-        android:text="LoveTweet"/>
+        android:paddingTop="16dp"
+        android:text="LoveTweet"
+        android:textSize="18sp"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -26,15 +25,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="24dp"
             android:paddingEnd="24dp"
+            android:paddingStart="24dp"
             android:text="Name"/>
 
         <EditText
             android:id="@+id/nameText"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            style="@style/EditText"/>
 
     </LinearLayout>
 
@@ -53,16 +53,20 @@
     </LinearLayout>
 
     <!--<include-->
-        <!--layout="@layout/part_date"-->
-        <!--android:clickable="true"-->
-        <!--android:focusable="true"-->
-        <!--android:foreground="?attr/selectableItemBackground"/>-->
+    <!--layout="@layout/part_date"-->
+    <!--android:clickable="true"-->
+    <!--android:focusable="true"-->
+    <!--android:foreground="?attr/selectableItemBackground"/>-->
 
     <LinearLayout
+        android:id="@+id/dateLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:orientation="horizontal">
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="showDatePickerDialog"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,8 +98,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="24dp"
             android:paddingEnd="24dp"
+            android:paddingStart="24dp"
             android:text="Work"/>
 
         <EditText
@@ -115,16 +119,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="24dp"
             android:paddingEnd="24dp"
+            android:paddingStart="24dp"
             android:text="Salary"/>
 
         <SeekBar
             android:id="@+id/salarySeek"
             android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:thumbTint="@android:color/holo_blue_light"
-            android:progressTint="@android:color/holo_blue_light"/>
+            android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/salaryText"
@@ -143,25 +145,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="24dp"
             android:paddingEnd="24dp"
+            android:paddingStart="24dp"
             android:text="Straight?"/>
-        
+
         <Switch
             android:id="@+id/straightSwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:shadowColor="@android:color/holo_blue_light"/>
+            android:thumbTint="@color/colorAccent"/>
 
     </LinearLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:background="?attr/selectableItemBackground"
-        android:textColor="@android:color/holo_blue_light"
         android:text="Tweet it!"
-        android:layout_gravity="center_horizontal"/>
+        android:textColor="@color/colorAccent"/>
 
 </LinearLayout>
 
