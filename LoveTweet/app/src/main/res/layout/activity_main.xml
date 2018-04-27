@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:paddingBottom="16dp"
-        android:paddingTop="16dp"
+        android:paddingTop="32dp"
         android:text="LoveTweet"
         android:textSize="18sp"/>
 
@@ -20,7 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="16dp">
+        android:paddingTop="16dp"
+        android:paddingStart="32dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,13 +43,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:paddingStart="32dp"
         android:paddingTop="16dp">
 
-        <!--TODO: create segmentedControl.-->
-        <ToggleButton
-            android:id="@+id/genderToggle"
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:text="Gender"/>
+
+        <RadioGroup
+            android:id="@+id/genderRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="24dp"
+            android:checkedButton="@id/maleButton"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/maleButton"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_male"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Male"/>
+
+            <RadioButton
+                android:id="@+id/femaleButton"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_female"
+                android:button="@null"
+                android:gravity="center"
+                android:text="Female"/>
+
+        </RadioGroup>
 
     </LinearLayout>
 
@@ -64,9 +94,9 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:focusable="true"
-        android:onClick="showDatePickerDialog"
+        android:paddingStart="32dp"
         android:orientation="horizontal"
-        android:paddingTop="16dp">
+        android:paddingTop="32dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -92,6 +122,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="32dp"
         android:orientation="horizontal"
         android:paddingTop="16dp">
 
@@ -113,6 +144,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="32dp"
         android:orientation="horizontal"
         android:paddingTop="16dp">
 
@@ -139,6 +171,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="32dp"
         android:orientation="horizontal"
         android:paddingTop="16dp">
 
@@ -158,10 +191,12 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/tweetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:background="?attr/selectableItemBackground"
+        android:layout_marginTop="32dp"
         android:text="Tweet it!"
         android:textColor="@color/colorAccent"/>
 

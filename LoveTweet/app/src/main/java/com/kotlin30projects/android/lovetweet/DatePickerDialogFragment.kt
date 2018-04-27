@@ -16,8 +16,27 @@ import org.threeten.bp.LocalDate
  */
 
 class DatePickerDialogFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
+    var year = 1999
+    var month = 1
+    var day = 1
+
     companion object {
-        fun newInstance() = DatePickerDialogFragment()
+        fun newInstance(year: Int, month: Int, dayOfMonth: Int): DatePickerDialogFragment {
+            return DatePickerDialogFragment().apply {
+                val arguments = Bundle().apply {
+                    putInt(Argument.YEAR.key, year)
+                    putInt(Argument.MONTH.key, month)
+                    putInt(Argument.DAY.key, dayOfMonth)
+                }
+                this.arguments = arguments
+            }
+        }
+    }
+
+    private enum class Argument(val key: String) {
+        YEAR("year"),
+        MONTH("month"),
+        DAY("day")
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -26,8 +45,12 @@ class DatePickerDialogFragment : DialogFragment(), DatePickerDialog.OnDateSetLis
 //        } else {
 //            ContextThemeWrapper(context, R.style.DatePickerDialog_Material)
 //        }
-        val now = LocalDate.now().minusYears(20)
-        return DatePickerDialog(/*themeContext*/context, activity as? MainActivity, now.year, now.month.value, now.dayOfMonth)
+        arguments?.let {
+            year = it.getInt(Argument.YEAR.key)
+            month = it.getInt(Argument.MONTH.key)
+            day = it.getInt(Argument.DAY.key)
+        }
+        return DatePickerDialog(/*themeContext*/context, activity as? MainActivity, year, month-1, day)
     }
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {}
