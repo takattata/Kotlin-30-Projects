@@ -3,6 +3,7 @@ package com.kotlin30projects.android.stopwatch
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.text.SimpleDateFormat
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     private var timer: Long = 0
     private var lapTimer: Long = 0
 
-    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -59,11 +59,11 @@ class MainActivity : AppCompatActivity() {
                 prevTimeMillis = System.currentTimeMillis()
                 leftButton.text = ButtonType.LAP.key
                 rightButton.text = ButtonType.STOP.key
-                rightButton.setTextColor(R.color.stopButton)
+                rightButton.setTextColor(ContextCompat.getColor(this, R.color.stopButton))
                 handler.post(runnable)
             } else if (rightButton.text == ButtonType.STOP.key) {
                 rightButton.text = ButtonType.START.key
-                rightButton.setTextColor(R.color.startButton)
+                rightButton.setTextColor(ContextCompat.getColor(this, R.color.startButton))
                 handler.removeCallbacks(runnable)
             }
         }
